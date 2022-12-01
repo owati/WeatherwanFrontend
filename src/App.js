@@ -55,7 +55,7 @@ function App() {
 
   useEffect(() => {
     if (count.current === 0) {
-      const websocket = new WebSocket("ws://localhost:4000/ws");
+      const websocket = new WebSocket(`${process.env.REACT_APP_API_URL}/ws`);
       websocket.onopen = e => {
         console.log("the websocket has connected successfull");
       }
