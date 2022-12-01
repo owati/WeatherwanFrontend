@@ -4,40 +4,10 @@ import './App.css';
 
 import { Chart } from 'react-charts';
 
-const data = [
-  {
-    label: 'Series 1',
-    data: [
-      {
-        primary: '2022-02-03T00:00:00.000Z',
-        likes: 130,
-      },
-      {
-        primary: '2022-03-03T00:00:00.000Z',
-        likes: 150,
-      },
-      {
-        primary: '2022-04-03T00:00:00.000Z',
-        likes: 170,
-      },
-      {
-        primary: '2022-05-03T00:00:00.000Z',
-        likes: 190,
-      },
-      {
-        primary: '2022-06-03T00:00:00.000Z',
-        likes: 250,
-      },
-      {
-        primary: '2022-07-03T00:00:00.000Z',
-        likes: 220,
-      },
-    ],
-  },
 
-]
+const now = new Date();
 
-const now = new Date().toLocaleTimeString();
+
 
 function App() {
 
@@ -47,10 +17,10 @@ function App() {
   const count = useRef(0);
 
   const dataHistory = useRef([
-    [{ timestamp: now, data: 0 }],
-    [{ timestamp: now, data: 0 }],
-    [{ timestamp: now, data: 0 }],
-    [{ timestamp: now, data: 0 }],])
+    [{ timestamp: now.toLocaleDateString() + ' ' + now.toLocaleTimeString(), data: 0 }],
+    [{ timestamp: now.toLocaleDateString() + ' ' + now.toLocaleTimeString(), data: 0 }],
+    [{ timestamp: now.toLocaleDateString() + ' ' + now.toLocaleTimeString(), data: 0 }],
+    [{ timestamp: now.toLocaleDateString() + ' ' + now.toLocaleTimeString(), data: 0 }],])
 
 
   useEffect(() => {
@@ -65,23 +35,23 @@ function App() {
           const message = JSON.parse(e.data);
           // console.log(message);  
 
-          const time = new Date().toLocaleTimeString();
+          const time = new Date();
           setData(
             [
               {
-                timestamp: time,
+                timestamp: time.toLocaleDateString() + ' ' + time.toLocaleTimeString(),
                 data: message.data.temp || 0
               },
               {
-                timestamp: time,
+                timestamp: time.toLocaleDateString() + ' ' + time.toLocaleTimeString(),
                 data: message.data.humidity || 0
               },
               {
-                timestamp: time,
+                timestamp: time.toLocaleDateString() + ' ' + time.toLocaleTimeString(),
                 data: message.data.bar_pressure || 0
               },
               {
-                timestamp: time,
+                timestamp: time.toLocaleDateString() + ' ' + time.toLocaleTimeString(),
                 data: message.data.vapor_pressure || 0
               },
             ]
@@ -142,11 +112,11 @@ function App() {
   )
 
   return (
-    <div className='Py-10 bg-[#8FE0FF]/20'>
+    <div className='py-10 bg-[#8FE0FF]/20'>
         <h2 className='text-5xl font-bold flex items-center text-[#31255A] justify-center '><img className='h-20 mr-2' src={rain}/> Weather Wan</h2>
         <h5 className='text-[#54416D] text-xl text-center'>A lora based weather stattion</h5>
 
-      <div className='w-full h-fit flex justify-center items-center p-20 flex-col'>
+      <div className='w-full h-fit flex justify-center items-center p-5 md:p-20 flex-col'>
         <div className='grid grid-cols-2 justify-center gap-10'>
           <h1 className='text-center text-2xl'>Temp: {temperature[temperature.length - 1].data}<sup>o</sup> C</h1>
           <h1 className='text-center text-2xl'>Humidity: {humidity[humidity.length - 1].data} gm<sup>-3</sup></h1>
@@ -175,7 +145,7 @@ function App() {
         </div>
 
         <div className='w-full h-96  mt-32'>
-          <h1 className='text-xl'>Humidity</h1>
+          <h1 className='text-xl'>Bar Pressure</h1>
           <Chart options={{
             initialWidth: 300,
             data: [{ label: "bar pressure", data: [...bar_pressure] }],
@@ -185,7 +155,7 @@ function App() {
         </div>
 
         <div className='w-full h-96  mt-32'>
-          <h1 className='text-xl'>Humidity</h1>
+          <h1 className='text-xl'>Vapour Pressure</h1>
           <Chart options={{
             initialWidth: 300,
             data: [{ label: "vapor pressure", data: [...vapor_pressure] }],

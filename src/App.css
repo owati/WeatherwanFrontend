@@ -559,25 +559,12 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .mt-32 {
   margin-top: 8rem;
-}
-
-.mt-36 {
-  margin-top: 9rem;
-}
-
-.mt-12 {
-  margin-top: 3rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .flex {
@@ -588,12 +575,8 @@ video {
   display: grid;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-96 {
-  height: 24rem;
+.h-20 {
+  height: 5rem;
 }
 
 .h-fit {
@@ -606,16 +589,12 @@ video {
   height: 400px;
 }
 
-.h-20 {
-  height: 5rem;
+.h-96 {
+  height: 24rem;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .grid-cols-2 {
@@ -634,59 +613,35 @@ video {
   justify-content: center;
 }
 
-.gap-5 {
-  gap: 1.25rem;
-}
-
 .gap-10 {
   gap: 2.5rem;
-}
-
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#75D4E3\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(117 212 227 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#8FE0FF\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 224 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#8FE0FF\]\/20 {
   background-color: rgb(143 224 255 / 0.2);
 }
 
-.p-20 {
-  padding: 5rem;
+.p-5 {
+  padding: 1.25rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .text-center {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-2xl {
@@ -698,26 +653,18 @@ video {
   font-weight: 700;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .text-\[\#31255A\] {
   --tw-text-opacity: 1;
   color: rgb(49 37 90 / var(--tw-text-opacity));
 }
 
-.text-\[\#54416Z\] {
-  color: #54416Z;
-}
-
 .text-\[\#54416D\] {
   --tw-text-opacity: 1;
   color: rgb(84 65 109 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:p-20 {
+    padding: 5rem;
+  }
 }
